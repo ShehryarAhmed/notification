@@ -117,6 +117,6 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
     public void testNotification(View view) {
-                NotificationUtils.remindUserBecauseCharging(this);
+                NotificationUtils.reminderUserBeacuseCharging(this);
             }
 }

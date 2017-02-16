@@ -6,6 +6,9 @@ import android.app.PendingIntent;
 import android.content.ContentProvider;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
@@ -52,9 +55,19 @@ public class NotificationUtils {
 
         Intent startActivityIntent = new Intent(context, MainActivity.class);
 
-        return PendingIntent.getActivities(
+        return PendingIntent.getActivity(
                 context,
-                )
+                WATER_REMINDER_NOTIFICATION_ID,
+                startActivityIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+    }
+
+    private static Bitmap largeIcon(Context context){
+        Resources res = context.getResources();
+
+        Bitmap largeIcon  = BitmapFactory.decodeResource(res,R.drawable.ic_local_drink_black_24px);
+
+        return largeIcon;
     }
 
 }
