@@ -31,8 +31,10 @@ public class NotificationUtils {
     public static final int ACTION_IGNORE_PENDING_INTENT_ID = 14;
 
     public static void clearAllNotifications(Context context) {
-        
 
+NotificationManager notificationManager = (NotificationManager)
+        context.getSystemService(context.NOTIFICATION_SERVICE);
+        notificationManager.cancelAll();
     }
 
 
