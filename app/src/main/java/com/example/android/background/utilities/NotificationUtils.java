@@ -22,14 +22,24 @@ import com.example.android.background.R;
  */
 
 public class NotificationUtils {
-    public static final int WATER_REMINDER_NOTIFICATION_ID = 1138;
+    private static final int WATER_REMINDER_NOTIFICATION_ID = 1138;
 
-    public static final int WATER_REMINDER_PENDING_INTENT = 3417;
+    private static final int WATER_REMINDER_PENDING_INTENT = 3417;
+
+    private static final int ACTION_DRINK_PENDING_INTENT_ID = 1;
+
+    public static final int ACTION_IGNORE_PENDING_INTENT_ID = 14;
+
+    public static void clearAllNotifications(Context context) {
+        
+
+    }
+
 
     public static void reminderUserBeacuseCharging(Context context) {
 
         NotificationCompat.Builder notificationBulider = new NotificationCompat.Builder(context).
-                setColor(ContextCompat.getColor(context, R.color.colorPrimary))
+                setColor(ContextCompat.getColor(context, R.color.colorAccent))
                 .setSmallIcon(R.drawable.ic_drink_notification)
                 .setLargeIcon(largeIcon(context))
                 .setContentTitle(context.getString(R.string.charging_reminder_notification_title))
